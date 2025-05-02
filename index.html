@@ -14,7 +14,82 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <div>
+        <div class="header"></div>
+        <h1 class="sr-only">Card Details Form</h1>
+
+        <div class="cards">
+          <img
+            src="./images/bg-card-front.png"
+            alt="Card Front"
+            class="card__front"
+          />
+          <img
+            src="./images/bg-card-back.png"
+            alt="Card Back"
+            class="card__back"
+          />
+        </div>
+
+        <form action="#" class="form">
+          <div class="form__group">
+            <label for="name">Cardholder Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="e.g. Jane Appleseed"
+              required
+              autocomplete="name"
+            />
+            <p class="error" aria-live="polite">Can't be blank</p>
+          </div>
+
+          <div class="form__group">
+            <label for="number">Card Number</label>
+            <input
+              type="number"
+              id="number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+            />
+            <p class="error" aria-live="polite">Wrong format, numbers only</p>
+          </div>
+
+          <div class="form__group form__group--half">
+            <div>
+              <label for="exp-date">Exp. Date (MM/YY)</label>
+              <div>
+                <input type="text" id="exp-date-mm" placeholder="MM" required />
+                <input type="text" id="exp-date-yy" placeholder="YY" required />
+              </div>
+              <p class="error" aria-live="polite">Can't be blank</p>
+            </div>
+
+            <div>
+              <label for="cvc">CVC</label>
+              <input type="text" id="cvc" placeholder="e.g. 123" required />
+              <p class="error" aria-live="polite">Can't be blank</p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Confirm</button>
+        </form>
+
+        <!-- Completed state -->
+
+        <div>
+          <img
+            src="./images/icon-complete.svg"
+            alt="Complete Icon"
+            class="complete__icon"
+          />
+          <h2>Thank you!</h2>
+          <p class="complete__text">We've added your card details</p>
+          <button type="button" class="btn btn--continue">Continue</button>
+        </div>
+      </div>
+    </main>
 
     <footer>
       <p class="attribution">
@@ -27,9 +102,6 @@
     </footer>
   </body>
 </html>
-0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane Appleseed
-Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC e.g. 123
-Confirm
 
 <!-- Completed state start -->
 
