@@ -18,26 +18,60 @@
     <link rel="stylesheet" href="./src/output.css" />
     <title>Interactive card details form</title>
   </head>
-  <body class="antialiased">
-    <main>
-      <div>
-        <div class="header"></div>
+  <body
+    class="antialiased font-space-grotesque flex flex-col min-h-dvh bg-white gap-8"
+  >
+    <main class="grow">
+      <div class="grid w-full">
+        <div
+          class="header col-start-1 col-span-1 row-start-1 row-span-1 h-60 w-full bg-[url(../images/bg-main-mobile.png)] bg-cover bg-no-repeat bg-center"
+        ></div>
         <h1 class="sr-only">Card Details Form</h1>
 
-        <div class="cards">
-          <img
-            src="./images/bg-card-front.png"
-            alt="Card Front"
-            class="card__front"
-          />
-          <img
-            src="./images/bg-card-back.png"
-            alt="Card Back"
-            class="card__back"
-          />
+        <div
+          class="cards relative z-10 col-start-1 col-span-1 row-start-1 row-end-3 px-4 pt-8 grid grid-cols-[50px_auto_50px] grid-rows-[auto_150px_auto]"
+        >
+          <div
+            class="col-start-1 col-end-3 row-start-2 row-end-4 relative border border-green-800 z-10 h-[180px] grid"
+          >
+            <img
+              src="./images/bg-card-front.png"
+              alt="Card Front"
+              class="card__front col-start-1 col-span-1 row-span-1 row-start-1 max-w-full h-full"
+            />
+            <div
+              class="w-full col-start-1 col-span-1 row-span-1 row-start-1 border border-error p-4 flex flex-col justify-between"
+            >
+              <img src="./images/card-logo.svg" alt="" class="w-16" />
+              <div class="w-full flex flex-col gap-2">
+                <p id="cardNumber" class="border">0000 0000 0000 0000</p>
+                <div class="flex items-center justify-between">
+                  <p id="cardName">Jane Appleseed</p>
+                  <p>
+                    <span id="expiryMonth">00</span>/<span id="expiryYear"
+                      >00</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-start-2 col-end-4 row-start-1 border relative row-end-3 h-fit"
+          >
+            <img
+              src="./images/bg-card-back.png"
+              alt="Card Back"
+              class="card__back absolute w-full"
+            />
+          </div>
         </div>
 
-        <form action="#" class="form">
+        <form
+          action="#"
+          class="form col-start-1 col-span-1 row-start-2 row-end-4"
+        >
           <div class="form__group">
             <label for="name">Cardholder Name</label>
             <input
@@ -63,8 +97,10 @@
 
           <div class="form__group form__group--half">
             <div>
-              <label for="exp-date">Exp. Date (MM/YY)</label>
+              <p>Exp. Date (MM/YY)</p>
               <div>
+                <label for="exp-date-mm" class="sr-only">Expiry month</label>
+                <label for="exp-date-yy" class="sr-only">Expiry year</label>
                 <input type="text" id="exp-date-mm" placeholder="MM" required />
                 <input type="text" id="exp-date-yy" placeholder="YY" required />
               </div>
