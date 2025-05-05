@@ -19,7 +19,7 @@
     <title>Interactive card details form</title>
   </head>
   <body
-    class="antialiased font-space-grotesque flex flex-col min-h-dvh bg-white gap-8"
+    class="antialiased font-space-grotesque flex flex-col min-h-dvh bg-white gap-8 text-lg"
   >
     <main class="grow">
       <div class="grid w-full">
@@ -32,19 +32,24 @@
           class="cards relative z-10 col-start-1 col-span-1 row-start-1 row-end-3 px-4 pt-8 grid grid-cols-[50px_auto_50px] grid-rows-[auto_150px_auto]"
         >
           <div
-            class="col-start-1 col-end-3 row-start-2 row-end-4 relative border border-green-800 z-10 h-[180px] grid"
+            class="col-start-1 col-end-3 row-start-2 row-end-4 relative border border-green-800 z-10 h-[180px] text-white grid"
           >
             <img
               src="./images/bg-card-front.png"
               alt="Card Front"
-              class="card__front col-start-1 col-span-1 row-span-1 row-start-1 max-w-full h-full"
+              class="card__front col-start-1 col-span-1 row-span-1 row-start-1 w-full h-full"
             />
             <div
               class="w-full col-start-1 col-span-1 row-span-1 row-start-1 border border-error p-4 flex flex-col justify-between"
             >
               <img src="./images/card-logo.svg" alt="" class="w-16" />
               <div class="w-full flex flex-col gap-2">
-                <p id="cardNumber" class="border">0000 0000 0000 0000</p>
+                <p
+                  id="cardNumber"
+                  class="border font-medium tracking-widest whitespace-nowrap"
+                >
+                  0000 0000 0000 000000000000000000000000
+                </p>
                 <div class="flex items-center justify-between">
                   <p id="cardName">Jane Appleseed</p>
                   <p>

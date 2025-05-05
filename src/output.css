@@ -11,6 +11,10 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --font-weight-medium: 500;
+    --tracking-widest: 0.1em;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-space-grotesque: "Space Grotesk", sans-serif;
@@ -229,32 +233,11 @@
   .table {
     display: table;
   }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
-  .h-\[120px\] {
-    height: 120px;
-  }
-  .h-\[130px\] {
-    height: 130px;
-  }
-  .h-\[150px\] {
-    height: 150px;
-  }
   .h-\[180px\] {
     height: 180px;
-  }
-  .h-\[200px\] {
-    height: 200px;
-  }
-  .h-\[2000px\] {
-    height: 2000px;
-  }
-  .h-auto {
-    height: auto;
   }
   .h-fit {
     height: fit-content;
@@ -264,9 +247,6 @@
   }
   .min-h-dvh {
     min-height: 100dvh;
-  }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
@@ -289,26 +269,8 @@
   .resize {
     resize: both;
   }
-  .grid-cols-\[30px_1fr_30px\] {
-    grid-template-columns: 30px 1fr 30px;
-  }
-  .grid-cols-\[50px_1fr_50px\] {
-    grid-template-columns: 50px 1fr 50px;
-  }
   .grid-cols-\[50px_auto_50px\] {
     grid-template-columns: 50px auto 50px;
-  }
-  .grid-rows-\[1fr_30px_1fr\] {
-    grid-template-rows: 1fr 30px 1fr;
-  }
-  .grid-rows-\[1fr_50px_1fr\] {
-    grid-template-rows: 1fr 50px 1fr;
-  }
-  .grid-rows-\[auto_50px_auto\] {
-    grid-template-rows: auto 50px auto;
-  }
-  .grid-rows-\[auto_100px_auto\] {
-    grid-template-rows: auto 100px auto;
   }
   .grid-rows-\[auto_150px_auto\] {
     grid-template-rows: auto 150px auto;
@@ -328,6 +290,11 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -338,26 +305,11 @@
   .border-green-800 {
     border-color: var(--color-green-800);
   }
-  .bg-LightGrayishViolet {
-    background-color: var(--color-LightGrayishViolet);
-  }
-  .bg-\[ur\] {
-    background-color: ur;
-  }
-  .bg-black {
-    background-color: var(--color-black);
-  }
   .bg-white {
     background-color: var(--color-white);
   }
   .bg-\[url\(\.\.\/images\/bg-main-mobile\.png\)\] {
     background-image: url(../images/bg-main-mobile.png);
-  }
-  .bg-\[url\(\.\/i\)\] {
-    background-image: url(./i);
-  }
-  .bg-\[url\(\.\/images\/bg-main-mobile\.png\)\] {
-    background-image: url(./images/bg-main-mobile.png);
   }
   .bg-cover {
     background-size: cover;
@@ -371,20 +323,32 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
-  .p-6 {
-    padding: calc(var(--spacing) * 6);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
-  .pt-12 {
-    padding-top: calc(var(--spacing) * 12);
-  }
   .font-space-grotesque {
     font-family: var(--font-space-grotesque);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
@@ -403,6 +367,14 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -412,6 +384,8 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-outline-style: solid;
     }
   }
